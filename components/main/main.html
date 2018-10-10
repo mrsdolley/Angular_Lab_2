@@ -1,0 +1,24 @@
+<form>
+ 
+    <!-- <p ng-repeat="member in $ctrl.band">{{member}}</p> -->
+
+    <div class=innerSquare>
+            <h1>TODO List</h1>
+            <h3 class="tagLine">A place to store the things you have to do!</h3>
+            <input type="text" class="filter" ng-model='$ctrl.filter' placeholder="Filter your to-dos"/>
+
+            <ol>
+                    <li contenteditable="true" ng-class="{done:chore.complete === true}" ng-repeat="chore in $ctrl.list | filter: $ctrl.filter">
+                        <button class="complete"  ng-click="$ctrl.completeTask($index)" ng-if="chore.complete===false" >Complete</button>{{chore.task}}<button ng-click="$ctrl.removeTask($index)" class="X" >X</button></li>
+                               
+                    
+             
+                
+            </ol>
+            <input  type="text" ng-model="$ctrl.newTask" class="filter" placeholder="Add your to do"/><span></span>
+        </br>
+            <button class="addButton" ng-click="$ctrl.addListItem()">Add</button> 
+    </div>
+    
+    
+</form>
